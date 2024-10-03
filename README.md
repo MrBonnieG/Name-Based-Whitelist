@@ -15,8 +15,8 @@ modrinth: https://modrinth.com/plugin/name-based-whitelist
 /nbwl reload - Config Reload<br />
 
 ###  Permissions:
-namebasedwhitelist.* - for all command
-namebasedwhitelist.add - for add command
-namebasedwhitelist.remove - for remove command
-namebasedwhitelist.toggle - for enable and disable command
-namebasedwhitelist.reload - for reload command
+namebasedwhitelist.* - for all command<br />
+namebasedwhitelist.add - for add command<br />
+namebasedwhitelist.remove - for remove command<br />
+namebasedwhitelist.toggle - for enable and disable command<br />
+namebasedwhitelist.reload - for reload command<br />
