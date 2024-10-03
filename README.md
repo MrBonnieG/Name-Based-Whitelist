@@ -13,3 +13,10 @@ modrinth: https://modrinth.com/plugin/name-based-whitelist
 /nbwl enable - Enable Name Based Whitelist<br />
 /nbwl remove - Disable Name Based Whitelist<br />
 /nbwl reload - Config Reload<br />
+
+###  Permissions:
+namebasedwhitelist.* - for all command
+namebasedwhitelist.add - for add command
+namebasedwhitelist.remove - for remove command
+namebasedwhitelist.toggle - for enable and disable command
+namebasedwhitelist.reload - for reload command
