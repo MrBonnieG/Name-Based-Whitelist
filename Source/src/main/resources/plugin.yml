@@ -1,0 +1,6 @@
+name: namebasedwhitelist
+version: '2.0'
+main: org.mrbonnieg.namebasedwhitelist.main
+api-version: '1.21'
+commands:
+  nbwl: {}

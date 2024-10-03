@@ -1,0 +1,15 @@
+# Enabling or disabling Whitelist. (true or false)
+enabled: true
+
+# Message.
+kick-message: "§cYou are not on the whitelist."
+
+no-permissions: "§2nbwl §7> §cYou don't have permission."
+plugin-reloaded: "§2nbwl §7> §aName Based Whitelist config reloaded."
+plugin-enabled: "§2nbwl §7> §aName Based Whitelist enabled."
+plugin-disabled: "§2nbwl §7> §cName Based Whitelist disabled."
+player-added: "§2nbwl §7> §aPlayer added to the whitelist."
+player-already-on-the-whitelist: "§2nbwl §7> §6Player already on the whitelist."
+player-removed: "§2nbwl §7> §cPlayer removed from the whitelist."
+player-not-found: "§2nbwl §7> §8Player not found on the whitelist."
+plugin-usage: "§2nbwl §7> §fPlugin usage:\n §7/nbwl add <username> §f- add player in whitelist\n §7/nbwl remove <username> §f- remove player in whitelist\n §7/nbwl enable §f- Enable Name Based Whitelsit\n §7/nbwl disable §f- Disable Name Based Whitelist\n §7/nbwl reload §f- Config Reload"
