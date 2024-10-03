@@ -121,7 +121,7 @@ public final class main extends JavaPlugin implements Listener {
             }
 
             if (args[0].equalsIgnoreCase("enable")) { // Enable command
-                if (!sender.hasPermission("namebasedwhitelist.enable") || !sender.hasPermission("namebasedwhitelist.*")) {
+                if (!sender.hasPermission("namebasedwhitelist.toggle") || !sender.hasPermission("namebasedwhitelist.*")) {
                     sender.sendMessage(noPermissions);
                     return true;
                 } else {
@@ -132,7 +132,7 @@ public final class main extends JavaPlugin implements Listener {
             }
 
             if (args[0].equalsIgnoreCase("disable")) { // Disable command
-                if (!sender.hasPermission("namebasedwhitelist.disable") || !sender.hasPermission("namebasedwhitelist.*")) {
+                if (!sender.hasPermission("namebasedwhitelist.toggle") || !sender.hasPermission("namebasedwhitelist.*")) {
                     sender.sendMessage(noPermissions);
                     return true;
                 } else {
