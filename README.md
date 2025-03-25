@@ -16,7 +16,5 @@ modrinth: https://modrinth.com/plugin/name-based-whitelist
 
 ###  Permissions:
 namebasedwhitelist.* - for all command<br />
-namebasedwhitelist.add - for add command<br />
-namebasedwhitelist.remove - for remove command<br />
-namebasedwhitelist.toggle - for enable and disable command<br />
-namebasedwhitelist.reload - for reload command<br />
+namebasedwhitelist.modify - for add/remove command<br />
+namebasedwhitelist.manage - for reload/enable/disable command<br />
