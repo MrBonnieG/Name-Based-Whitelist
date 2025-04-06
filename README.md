@@ -13,8 +13,8 @@ modrinth: https://modrinth.com/plugin/name-based-whitelist
 - Restart your server.
 
 ###  Commands:
-/nbwl add <username> - add player in whitelist<br />
-/nbwl remove <username> - remove player in whitelist<br />
+/nbwl add USERNAME - add player in whitelist<br />
+/nbwl remove USERNAME - remove player in whitelist<br />
 /nbwl enable - Enable Name Based Whitelist<br />
 /nbwl remove - Disable Name Based Whitelist<br />
 /nbwl reload - Config Reload<br />
