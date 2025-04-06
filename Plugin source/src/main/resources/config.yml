@@ -6,7 +6,7 @@ plugin-settings:
 
 database: # If storage type is mysql
   host: "localhost:3306"
-  db-name: "database"
+  name: "database"
   username: "root"
   password: "password"
 

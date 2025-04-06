@@ -10,7 +10,7 @@ import java.util.logging.Level;
 
 public class MySqlStorage implements Storage {
     private final Main plugin;
-    private final String serverAddress;
+    private final String host;
     private final String database;
     private final String username;
     private final String password;
@@ -19,8 +19,8 @@ public class MySqlStorage implements Storage {
     public MySqlStorage(Main plugin) {
         this.plugin = plugin;
         FileConfiguration config = plugin.getConfig();
-        this.serverAddress = config.getString("database.host", "localhost:3306");
-        this.database = config.getString("database.db-name", "minecraft");
+        this.host = config.getString("database.host", "localhost:3306");
+        this.database = config.getString("database.name", "minecraft");
         this.username = config.getString("database.username", "root");
         this.password = config.getString("database.password", "");
 
@@ -33,7 +33,7 @@ public class MySqlStorage implements Storage {
                 synchronized (this) {
                     if (connection == null || connection.isClosed()) {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        String url = "jdbc:mysql://" + serverAddress + "/" + database + "?useSSL=false&allowPublicKeyRetrieval=true";
+                        String url = "jdbc:mysql://" + host + "/" + database + "?useSSL=false&allowPublicKeyRetrieval=true";
                         connection = DriverManager.getConnection(url, username, password);
                         createTableIfNotExists();
                         plugin.getLogger().log(Level.INFO, "MySQL connection established.");
