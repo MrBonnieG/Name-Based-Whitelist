@@ -1,4 +1,4 @@
-## Simple whitelist plugin for your offline-mode server.
+## Simple whitelist plugin for your offline-mode server. Two types of storage: **Yaml** or **MySql**
 
 modrinth: https://modrinth.com/plugin/name-based-whitelist
 
@@ -6,6 +6,11 @@ modrinth: https://modrinth.com/plugin/name-based-whitelist
 1. Disable Minecraft's whitelist in server.properties (white-list=false)
 2. Put plugin in plugins folder
 3. Start your server
+
+### If you want to use MySql:
+- Change storage-type to mysql in the config.
+- Specify the data from the database in the config.
+- Restart your server.
 
 ###  Commands:
 /nbwl add <username> - add player in whitelist<br />
