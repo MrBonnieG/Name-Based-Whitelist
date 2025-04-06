@@ -54,7 +54,7 @@ public class MySqlStorage implements Storage {
                     ");";
             statement.executeUpdate(sql);
         } catch (SQLException e) {
-            plugin.getLogger().log(Level.SEVERE, "Failed to create whitelist_players table!", e);
+            plugin.getLogger().log(Level.SEVERE, "Failed to create whitelist table!", e);
         }
     }
 
@@ -70,7 +70,7 @@ public class MySqlStorage implements Storage {
         List<String> whitelist = new ArrayList<>();
         try (Connection conn = getConnection();
              Statement statement = conn.createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT username FROM whitelist_players;")) {
+             ResultSet resultSet = statement.executeQuery("SELECT username FROM whitelist;")) {
             while (resultSet.next()) {
                 whitelist.add(resultSet.getString("username"));
             }
@@ -84,7 +84,7 @@ public class MySqlStorage implements Storage {
     public boolean addPlayer(String username) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             try (Connection conn = getConnection();
-                 PreparedStatement statement = conn.prepareStatement("INSERT INTO whitelist_players (username) VALUES (?) ON DUPLICATE KEY UPDATE username = username;")) {
+                 PreparedStatement statement = conn.prepareStatement("INSERT INTO whitelist (username) VALUES (?) ON DUPLICATE KEY UPDATE username = username;")) {
                 statement.setString(1, username);
                 statement.executeUpdate();
             } catch (SQLException e) {
@@ -98,7 +98,7 @@ public class MySqlStorage implements Storage {
     public boolean removePlayer(String username) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             try (Connection conn = getConnection();
-                 PreparedStatement statement = conn.prepareStatement("DELETE FROM whitelist_players WHERE username = ?;")) {
+                 PreparedStatement statement = conn.prepareStatement("DELETE FROM whitelist WHERE username = ?;")) {
                 statement.setString(1, username);
                 statement.executeUpdate();
             } catch (SQLException e) {
