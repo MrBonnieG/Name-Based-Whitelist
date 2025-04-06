@@ -6,7 +6,7 @@
 
     <groupId>org.mrbonnieg</groupId>
     <artifactId>NameBasedWhitelist</artifactId>
-    <version>2.2</version>
+    <version>3.0</version>
     <packaging>jar</packaging>
 
     <name>NameBasedWhitelist</name>
@@ -69,10 +69,10 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>24.1.0</version>
-            <scope>compile</scope>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

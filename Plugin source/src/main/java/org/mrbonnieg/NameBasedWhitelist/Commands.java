@@ -9,8 +9,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,14 +52,12 @@ public class Commands implements CommandExecutor, TabCompleter {
                     sender.sendMessage(noPermissions);
                     return true;
                 } else {
-                    List<String> whitelistedPlayers = plugin.whitelist().getStringList("players");
-                    if (whitelistedPlayers.contains(args[1])) {
+                    String playerName = args[1];
+                    if (plugin.getStorage().getPlayers().contains(playerName)) {
                         sender.sendMessage(playerAlreadyExists);
                         return true;
                     } else {
-                        whitelistedPlayers.add(args[1]);
-                        plugin.whitelist().set("players", whitelistedPlayers);
-                        saveWhitelist();
+                        plugin.getStorage().addPlayer(playerName);
                         sender.sendMessage(playerAdd);
                         return true;
                     }
@@ -71,14 +67,12 @@ public class Commands implements CommandExecutor, TabCompleter {
                     sender.sendMessage(noPermissions);
                     return true;
                 } else {
-                    List<String> whitelistedPlayers = plugin.whitelist().getStringList("players");
-                    if (!whitelistedPlayers.contains(args[1])) {
+                    String playerName = args[1];
+                    if (!plugin.getStorage().getPlayers().contains(playerName)) {
                         sender.sendMessage(playerNotFound);
                         return true;
                     } else {
-                        whitelistedPlayers.remove(args[1]);
-                        plugin.whitelist().set("players", whitelistedPlayers);
-                        saveWhitelist();
+                        plugin.getStorage().removePlayer(playerName);
                         sender.sendMessage(playerRemove);
                         return true;
                     }
@@ -109,18 +103,10 @@ public class Commands implements CommandExecutor, TabCompleter {
         }
     }
 
-    private void saveWhitelist() {
-        try {
-            plugin.whitelist().save(new File(plugin.getDataFolder(), "whitelist.yml"));
-        } catch (IOException e) {
-            plugin.getLogger().severe("Failed to save whitelist.yml");
-        }
-    }
-
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (args.length == 1) {
-            return Lists.newArrayList("reload", "add", "remove", "enable", "disable");
+            return Lists.newArrayList("add", "remove", "enable", "disable", "reload");
         }
         if (args.length == 2 && (args[0].equalsIgnoreCase("add") || args[0].equalsIgnoreCase("remove"))) {
             List<String> playerNames = new ArrayList<>();

@@ -1,6 +1,14 @@
 plugin-settings:
-  # Enabling or disabling whitelist: true, false
+  # Enabling or disabling whitelist: true, false.
   enable: true
+  # Storage type: yml, mysql
+  storage-type: yml
+
+database: # If storage type is mysql
+  host: "localhost:3306"
+  db-name: "database"
+  username: "root"
+  password: "password"
 
 messages:
   kick-message: "&cYou are not on the whitelist."

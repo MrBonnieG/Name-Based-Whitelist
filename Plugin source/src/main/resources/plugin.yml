@@ -1,5 +1,5 @@
 name: NameBasedWhitelist
-version: '2.2'
+version: '3.0'
 main: org.mrbonnieg.NameBasedWhitelist.Main
 api-version: '1.19'
 load: STARTUP
