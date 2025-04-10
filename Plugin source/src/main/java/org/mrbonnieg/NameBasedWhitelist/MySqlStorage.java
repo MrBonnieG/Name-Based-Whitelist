@@ -49,7 +49,7 @@ public class MySqlStorage implements Storage {
 
     private void createTableIfNotExists() {
         try (Statement statement = getConnection().createStatement()) {
-            String sql = "CREATE TABLE IF NOT EXISTS whitelist_players (" +
+            String sql = "CREATE TABLE IF NOT EXISTS whitelist (" +
                     "username VARCHAR(255) PRIMARY KEY" +
                     ");";
             statement.executeUpdate(sql);
