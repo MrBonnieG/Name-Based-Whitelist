@@ -1,4 +1,4 @@
-package org.mrbonnieg.NameBasedWhitelist;
+package org.mrbonnieg.namebasedwhitelist;
 
 import com.google.common.collect.Lists;
 import org.bukkit.Bukkit;
@@ -52,13 +52,13 @@ public class Commands implements CommandExecutor, TabCompleter {
                     sender.sendMessage(noPermissions);
                     return true;
                 } else {
-                    String playerName = args[1];
+                    String playerName = args[1].toLowerCase();
                     if (plugin.getStorage().getPlayers().contains(playerName)) {
-                        sender.sendMessage(playerAlreadyExists);
+                        sender.sendMessage(playerAlreadyExists.replace("%player%", playerName));
                         return true;
                     } else {
                         plugin.getStorage().addPlayer(playerName);
-                        sender.sendMessage(playerAdd);
+                        sender.sendMessage(playerAdd.replace("%player%", playerName));
                         return true;
                     }
                 }
@@ -67,13 +67,13 @@ public class Commands implements CommandExecutor, TabCompleter {
                     sender.sendMessage(noPermissions);
                     return true;
                 } else {
-                    String playerName = args[1];
+                    String playerName = args[1].toLowerCase();
                     if (!plugin.getStorage().getPlayers().contains(playerName)) {
-                        sender.sendMessage(playerNotFound);
+                        sender.sendMessage(playerNotFound.replace("%player%", playerName));
                         return true;
                     } else {
                         plugin.getStorage().removePlayer(playerName);
-                        sender.sendMessage(playerRemove);
+                        sender.sendMessage(playerRemove.replace("%player%", playerName));
                         return true;
                     }
                 }
@@ -82,7 +82,7 @@ public class Commands implements CommandExecutor, TabCompleter {
                     sender.sendMessage(noPermissions);
                     return true;
                 } else {
-                    plugin.config().set("plugin-settings.enable", true);
+                    plugin.config().set("settings.enable", true);
                     plugin.saveConfig();
                     sender.sendMessage(pluginEnable);
                     return true;
@@ -92,7 +92,7 @@ public class Commands implements CommandExecutor, TabCompleter {
                     sender.sendMessage(noPermissions);
                     return true;
                 } else {
-                    plugin.config().set("plugin-settings.enable", false);
+                    plugin.config().set("settings.enable", false);
                     plugin.saveConfig();
                     sender.sendMessage(pluginDisable);
                     return true;

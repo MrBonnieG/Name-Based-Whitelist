@@ -6,7 +6,7 @@
 
     <groupId>org.mrbonnieg</groupId>
     <artifactId>NameBasedWhitelist</artifactId>
-    <version>3.0</version>
+    <version>3.1</version>
     <packaging>jar</packaging>
 
     <name>NameBasedWhitelist</name>
@@ -55,10 +55,6 @@
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -71,7 +67,7 @@
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>8.3.0</version>
+            <version>9.4.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

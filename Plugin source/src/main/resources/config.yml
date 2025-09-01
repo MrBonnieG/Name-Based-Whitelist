@@ -1,5 +1,5 @@
-plugin-settings:
-  # Enabling or disabling whitelist: true, false.
+settings:
+  # Enabling of disabling whitelist: true, false.
   enable: true
   # Storage type: yml, mysql
   storage-type: yml
@@ -13,10 +13,10 @@ database: # If storage type is mysql
 messages:
   kick-message: "&cYou are not on the whitelist."
   no-permissions: "&2NBWL &7> &cYou don't have permission."
-  player-add: "&2NBWL &7> &aPlayer added to the whitelist."
-  player-remove: "&2NBWL &7> &cPlayer removed from the whitelist."
-  player-already-exists: "&2NBWL &7> &cPlayer already on the whitelist."
-  player-not-found: "&2NBWL &7> &cPlayer not found on the whitelist."
+  player-add: "&2NBWL &7> &a%player% added to the whitelist."
+  player-remove: "&2NBWL &7> &c%player% removed from the whitelist."
+  player-already-exists: "&2NBWL &7> &c%player% already on the whitelist."
+  player-not-found: "&2NBWL &7> &c%player% not found on the whitelist."
   plugin-reload: "&2NBWL &7>  &aPlugin config reloaded."
   plugin-enable: "&2NBWL &7>  &aName Based Whitelist enabled."
   plugin-disable: "&2NBWL &7> &cName Based Whitelist disabled."

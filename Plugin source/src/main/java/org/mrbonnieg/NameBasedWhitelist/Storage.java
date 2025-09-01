@@ -1,4 +1,4 @@
-package org.mrbonnieg.NameBasedWhitelist;
+package org.mrbonnieg.namebasedwhitelist;
 
 import java.util.List;
 

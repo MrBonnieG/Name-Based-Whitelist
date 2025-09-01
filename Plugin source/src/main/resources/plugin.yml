@@ -1,16 +1,14 @@
 name: NameBasedWhitelist
-version: '3.0'
-main: org.mrbonnieg.NameBasedWhitelist.Main
+version: '3.1'
+main: org.mrbonnieg.namebasedwhitelist.Main
 api-version: '1.19'
 load: STARTUP
 authors: [ MrBonnieG ]
 description: Simple name based whitelist for your servers.
-
 commands:
   nbwl:
     description: NameBasedWhitelist commands
     usage: /nbwl <reload|add|remove|enable|disable>
-
 permissions:
   namebasedwhitelist.modifylist:
     description: Allows modifying the whitelist (add/remove players)

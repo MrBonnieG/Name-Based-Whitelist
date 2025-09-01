@@ -1,4 +1,4 @@
-package org.mrbonnieg.NameBasedWhitelist;
+package org.mrbonnieg.namebasedwhitelist;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
@@ -15,12 +15,10 @@ public class Events implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onJoin(PlayerJoinEvent event) {
-        if (!plugin.getConfig().getBoolean("plugin-settings.enable")) {
-            return;
-        }
+        if (!plugin.getConfig().getBoolean("settings.enable")) return;
 
-        String username = event.getPlayer().getName();
-        if (!plugin.getStorage().getPlayers().contains(username)) {
+        String username = event.getPlayer().getName().toLowerCase();
+        if(!plugin.getStorage().getPlayers().contains(username)) {
             event.getPlayer().kickPlayer(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("messages.kick-message")));
         }
     }
